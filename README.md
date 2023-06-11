@@ -19,7 +19,7 @@ Vue.js 2 component for displaying hindu arabic money figures
 ```vue
 <template>
   <span :style="textStyle">
-    <spanv-if="showSymbol">{{ symbol }}</span><span>{{ value | money }}</span>
+    <span v-if="showSymbol">{{ symbol }}</span><span>{{ value | money }}</span>
   </span>
 </template>
 
