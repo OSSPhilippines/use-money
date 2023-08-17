@@ -1,6 +1,6 @@
 {
   "name": "@ossph/use-money",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Vue 3 component and composable for formatting money",
   "author": "Joff Tiquez",
   "main": "lib/use-money.common.js",
