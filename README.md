@@ -1,4 +1,4 @@
-# 💸 Money Component 💰
+# 💸 Money 💰
 
 ## Installation
 

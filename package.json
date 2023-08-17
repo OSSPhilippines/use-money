@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "description": "A Vue 3 composition API for formatting money",
   "author": "Joff Tiquez",
-  "main": "dist/use-money.common.js",
-  "module": "dist/use-money.umd.min.js",
+  "main": "lib/use-money.common.js",
+  "module": "lib/use-money.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "test": "vue-cli-service test:unit",
+    "prebuild": "npm run test",
     "build": "npm run build:lib",
     "build:lib": "vue-cli-service build --target lib --name use-money src/index.js",
     "lint": "vue-cli-service lint --fix"
@@ -17,7 +18,7 @@
     "vue": "^3.2.13"
   },
   "files": [
-    "dist/*.{js,css}"
+    "lib/*.{js,css}"
   ],
   "devDependencies": {
     "@babel/core": "^7.12.16",
