@@ -3,8 +3,8 @@
   "version": "1.0.1",
   "description": "A Vue 3 component and composable for formatting money",
   "author": "Joff Tiquez",
-  "main": "lib/use-money.common.js",
-  "module": "lib/use-money.umd.min.js",
+  "main": "dist/use-money.common.js",
+  "module": "dist/use-money.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "test": "vue-cli-service test:unit",
