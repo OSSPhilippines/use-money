@@ -1,0 +1,60 @@
+{
+  "name": "@ossph/use-money",
+  "version": "0.1.0",
+  "description": "A Vue 3 composition API for formatting money",
+  "author": "Joff Tiquez",
+  "main": "dist/use-money.common.js",
+  "module": "dist/use-money.umd.min.js",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "test": "vue-cli-service test:unit",
+    "build": "npm run build:lib",
+    "build:lib": "vue-cli-service build --target lib --name use-money src/index.js",
+    "lint": "vue-cli-service lint --fix"
+  },
+  "dependencies": {
+    "core-js": "^3.8.3",
+    "vue": "^3.2.13"
+  },
+  "files": [
+    "dist/*.{js,css}"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-unit-jest": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/eslint-config-standard": "^6.1.0",
+    "@vue/test-utils": "^2.4.1",
+    "@vue/vue3-jest": "^27.0.0-alpha.1",
+    "babel-jest": "^27.0.6",
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "jest": "^27.0.5"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}

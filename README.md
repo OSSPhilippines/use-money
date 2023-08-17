@@ -1,55 +1,123 @@
 # 💸 Money Component 💰
 
-Vue.js 2 component for displaying hindu arabic money figures
+## Installation
 
-## Usage
+Install the @ossph/money package using npm or yarn:
 
-```html
-<money :value="100" show-symbol /> // ₱100.00
-<money :value="1000" show-symbol /> // ₱1,000.00
-<money :value="1000" /> // 1,000.00
+```bash
+npm install @ossph/money
 
-// Using $ as symbol
+```
+or 
 
-<money :value="1000" symbol="$" show-symbol /> // $1,000.00
+```bash
+yarn add @ossph/money
+
 ```
 
-## The component
+## Money Component
 
-```vue
+### Importing the Component
+
+To use the **Money** component, import it as follows:
+
+```js
+import { Money } from '@ossph/money';
+```
+
+### Example Usage
+
+Use the **Money** component in your Vue templates as follows:
+
+```html
 <template>
-  <span :style="textStyle">
-    <span v-if="showSymbol">{{ symbol }}</span><span>{{ value | money }}</span>
-  </span>
+  <div>
+    <Money :input="123456.78" />
+  </div>
 </template>
 
 <script>
+import { Money } from '@ossph/money';
+
 export default {
-  filters: {
-    money (num) {
-      const [characteristic, mantissa] = Number.parseFloat(num).toFixed(2).split('.');
-      const integer = parseInt(characteristic).toLocaleString();
-      const fractional = mantissa;
-      return [integer, fractional].join('.');
-    },
-  },
-  props: {
-    value: {
-      type: Number,
-      default: 0,
-    },
-    symbol: {
-      type: String,
-      default: '₱',
-    },
-    textStyle: {
-      type: Object,
-      default: () => ({}),
-    },
-    showSymbol: Boolean,
-  },
+  components: {
+    Money
+  }
+};
+</script>
+
+```
+
+### Props API
+
+The `Money` component accepts the following props:
+
+| Prop Name      | Type                | Default | Description                                        |
+|----------------|---------------------|---------|----------------------------------------------------|
+| `input`        | Number/String       |         | The input money value to be formatted.            |
+| `symbol`       | String              | '$'     | The currency symbol.                              |
+| `symbolStyles` | Object              | {}      | CSS styles for the currency symbol.               |
+| `symbolClasses`| Array               | []      | CSS classes for the currency symbol.              |
+| `textStyle`    | Object              | {}      | CSS styles for the text.                          |
+| `showSymbol`   | Boolean             |         | Whether to show the currency symbol.              |
+| `showFractional` | Boolean            |         | Whether to show the fractional part of the money value. |
+
+
+
+## Money Composable
+
+### Importing the Composable
+
+To use the **useMoney** composable, import it as follows:
+
+```js
+import { useMoney } from '@ossph/money';
+```
+
+### Example Usage
+
+Use the useMoney composable in your Vue composition functions as follows:
+
+```js
+<template>
+  <div>
+    <p>Formatted Money Value: {{ formattedMoney }}</p>
+  </div>
+</template>
+
+<script>
+import { useMoney } from '@ossph/money';
+
+export default {
+  setup() {
+    const { moneyValue } = useMoney(123456.78);
+    
+    return {
+      formattedMoney: moneyValue
+    };
+  }
 };
 </script>
 ```
 
-Code snippet by [Joff Tiquez](https://twitter.com/jrtiquez)
+### Composable API
+
+The `useMoney` composable takes the following parameters:
+
+| Prop Name  | Type               | Default                                          | Description                                        |
+|------------|--------------------|--------------------------------------------------|----------------------------------------------------|
+| `value`    | Number/String      |                                                  | The input money value to be formatted.            |
+| `options`  | Object             | `{ showFractional: true, showSymbol: true, symbol: '$' }` | Formatting options for money value.        |
+| `showFractional` | Boolean        | `true`                                           | Whether to show the fractional part of the money value. |
+| `showSymbol`     | Boolean        | `true`                                           | Whether to show the currency symbol.               |
+| `symbol`         | String         | `'$'`                                            | The currency symbol.                              |
+
+
+It returns an object with the following properties:
+
+| Property           | Type   | Description                                        |
+|--------------------|--------|----------------------------------------------------|
+| `moneyValue`       | String | The formatted integer part of the money value.    |
+| `moneyFractional`  | String | The original fractional part.                     |
+| `moneySymbol`      | String | The currency symbol.                              |
+| `moneyConcatenated`| String | The concatenated value with the currency symbol.  |
