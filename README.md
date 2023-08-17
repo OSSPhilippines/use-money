@@ -1,17 +1,17 @@
-# 💸 Money 💰
+# 💸 Use Money 💰
 
 ## Installation
 
-Install the @ossph/money package using npm or yarn:
+Install the @ossph/use-money package using npm or yarn:
 
 ```bash
-npm install @ossph/money
+npm install @ossph/use-money
 
 ```
 or 
 
 ```bash
-yarn add @ossph/money
+yarn add @ossph/use-money
 
 ```
 
@@ -22,7 +22,7 @@ yarn add @ossph/money
 To use the **Money** component, import it as follows:
 
 ```js
-import { Money } from '@ossph/money';
+import { Money } from '@ossph/use-money';
 ```
 
 ### Example Usage
@@ -37,7 +37,7 @@ Use the **Money** component in your Vue templates as follows:
 </template>
 
 <script>
-import { Money } from '@ossph/money';
+import { Money } from '@ossph/use-money';
 
 export default {
   components: {
@@ -71,7 +71,7 @@ The `Money` component accepts the following props:
 To use the **useMoney** composable, import it as follows:
 
 ```js
-import { useMoney } from '@ossph/money';
+import { useMoney } from '@ossph/use-money';
 ```
 
 ### Example Usage
@@ -86,7 +86,7 @@ Use the useMoney composable in your Vue composition functions as follows:
 </template>
 
 <script>
-import { useMoney } from '@ossph/money';
+import { useMoney } from '@ossph/use-money';
 
 export default {
   setup() {
