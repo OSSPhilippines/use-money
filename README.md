@@ -59,8 +59,8 @@ The `Money` component accepts the following props:
 | `symbolStyles` | Object              | {}      | CSS styles for the currency symbol.               |
 | `symbolClasses`| Array               | []      | CSS classes for the currency symbol.              |
 | `textStyle`    | Object              | {}      | CSS styles for the text.                          |
-| `showSymbol`   | Boolean             |         | Whether to show the currency symbol.              |
-| `showFractional` | Boolean            |         | Whether to show the fractional part of the money value. |
+| `showSymbol`   | Boolean             | false   | Whether to show the currency symbol.              |
+| `showFractional` | Boolean            | false  | Whether to show the fractional part of the money value. |
 
 
 
