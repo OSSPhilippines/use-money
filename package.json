@@ -3,6 +3,10 @@
   "version": "1.0.3",
   "description": "A Vue 3 component and composable for formatting money",
   "author": "Joff Tiquez",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
   "main": "./dist/use-money.umd.js",
   "module": "./dist/use-money.es.js",
   "exports": {
